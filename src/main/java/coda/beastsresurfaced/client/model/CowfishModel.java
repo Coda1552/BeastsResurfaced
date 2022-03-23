@@ -44,12 +44,12 @@ public class CowfishModel extends AnimatedTickingGeoModel<CowfishEntity> {
             fish.setScaleX(0.5F);
             fish.setScaleY(0.5F);
             fish.setScaleZ(0.5F);
-            fish.setPositionY(-2.75F);
+            fish.setPositionY(-8F);
 
-            head.setScaleX(1.5F);
-            head.setScaleY(1.5F);
-            head.setScaleZ(1.5F);
-            head.setPositionY(1.0F);
+            head.setScaleX(1.35F);
+            head.setScaleY(1.35F);
+            head.setScaleZ(1.35F);
+            head.setPositionY(-1.0F);
         }
     }
 }

@@ -83,7 +83,9 @@ public class CowfishEntity extends Animal implements IAnimatable, IAnimationTick
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob parent) {
-        return new CowfishEntity(BREntities.ANEMONE_CRAWLER.get(), level);
+        CowfishEntity cowfish = new CowfishEntity(BREntities.COWFISH.get(), level);
+        cowfish.setVariant(random.nextInt(2));
+        return cowfish;
     }
 
     @Override
