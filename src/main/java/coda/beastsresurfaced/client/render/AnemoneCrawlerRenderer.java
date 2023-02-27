@@ -1,14 +1,22 @@
 package coda.beastsresurfaced.client.render;
 
+import coda.beastsresurfaced.BeastsResurfaced;
+import coda.beastsresurfaced.client.BRModelLayers;
 import coda.beastsresurfaced.client.model.AnemoneCrawlerModel;
-import coda.beastsresurfaced.common.entities.AnemoneCrawlerEntity;
+import coda.beastsresurfaced.common.entities.AnemoneCrawler;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
+import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.resources.ResourceLocation;
 
-public class AnemoneCrawlerRenderer extends GeoEntityRenderer<AnemoneCrawlerEntity> {
+public class AnemoneCrawlerRenderer extends MobRenderer<AnemoneCrawler, AnemoneCrawlerModel<AnemoneCrawler>> {
+    private static final ResourceLocation TEX = new ResourceLocation(BeastsResurfaced.MOD_ID, "textures/entity/anemone_crawler/anemone_crawler.png");
 
     public AnemoneCrawlerRenderer(EntityRendererProvider.Context renderManager) {
-        super(renderManager, new AnemoneCrawlerModel());
-        this.shadowRadius = 0.25F;
+        super(renderManager, new AnemoneCrawlerModel<>(renderManager.bakeLayer(BRModelLayers.ANEMONE_CRAWLER)), 0.35F);
+    }
+
+    @Override
+    public ResourceLocation getTextureLocation(AnemoneCrawler o) {
+        return TEX;
     }
 }

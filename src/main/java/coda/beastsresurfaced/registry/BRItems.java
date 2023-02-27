@@ -14,5 +14,5 @@ public class BRItems {
 
     // Spawn Eggs
     public static final RegistryObject<Item> ANEMONE_CRAWLER_SPAWN_EGG = ITEMS.register("anemone_crawler_spawn_egg", () -> new ForgeSpawnEggItem(BREntities.ANEMONE_CRAWLER, 0xf87a2d, 0xf2f2f0, new Item.Properties().tab(BeastsResurfaced.TAB)));
-    public static final RegistryObject<Item> COWFISH_SPAWN_EGG = ITEMS.register("cowfish_spawn_egg", () -> new ForgeSpawnEggItem(BREntities.COWFISH, 0xf6f66f, 0x70afe8, new Item.Properties().tab(BeastsResurfaced.TAB)));
+    public static final RegistryObject<Item> SEACOW_SPAWN_EGG = ITEMS.register("seacow_spawn_egg", () -> new ForgeSpawnEggItem(BREntities.SEACOW, 0xf6f66f, 0x70afe8, new Item.Properties().tab(BeastsResurfaced.TAB)));
 }

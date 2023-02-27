@@ -1,7 +1,7 @@
 package coda.beastsresurfaced;
 
-import coda.beastsresurfaced.common.entities.AnemoneCrawlerEntity;
-import coda.beastsresurfaced.common.entities.CowfishEntity;
+import coda.beastsresurfaced.common.entities.AnemoneCrawler;
+import coda.beastsresurfaced.common.entities.Seacow;
 import coda.beastsresurfaced.registry.BREntities;
 import coda.beastsresurfaced.registry.BRItems;
 import net.minecraft.world.item.CreativeModeTab;
@@ -13,7 +13,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import software.bernie.geckolib3.GeckoLib;
 
 @Mod(BeastsResurfaced.MOD_ID)
 public class BeastsResurfaced {
@@ -34,13 +33,11 @@ public class BeastsResurfaced {
         BRItems.ITEMS.register(bus);
 
         bus.addListener(this::registerEntityAttributes);
-
-        GeckoLib.initialize();
     }
 
     private void registerEntityAttributes(EntityAttributeCreationEvent event) {
-        event.put(BREntities.ANEMONE_CRAWLER.get(), AnemoneCrawlerEntity.createAttributes().build());
-        event.put(BREntities.COWFISH.get(), CowfishEntity.createAttributes().build());
+        event.put(BREntities.ANEMONE_CRAWLER.get(), AnemoneCrawler.createAttributes().build());
+        event.put(BREntities.SEACOW.get(), Seacow.createAttributes().build());
     }
 
 }

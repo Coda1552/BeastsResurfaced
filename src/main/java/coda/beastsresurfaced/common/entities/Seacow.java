@@ -19,21 +19,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.HitResult;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib3.core.IAnimatable;
-import software.bernie.geckolib3.core.IAnimationTickable;
-import software.bernie.geckolib3.core.PlayState;
-import software.bernie.geckolib3.core.controller.AnimationController;
-import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
-import software.bernie.geckolib3.core.manager.AnimationData;
-import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class CowfishEntity extends Animal implements IAnimatable, IAnimationTickable {
-    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(CowfishEntity.class, EntityDataSerializers.INT);
-    private final AnimationFactory factory = new AnimationFactory(this);
+public class Seacow extends Animal {
+    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Seacow.class, EntityDataSerializers.INT);
 
-    public CowfishEntity(EntityType<? extends Animal> p_30341_, Level level) {
+    public Seacow(EntityType<? extends Animal> p_30341_, Level level) {
         super(p_30341_, level);
-        this.maxUpStep = 1.0F;
     }
 
     @Override
@@ -53,7 +44,7 @@ public class CowfishEntity extends Animal implements IAnimatable, IAnimationTick
 
     @Override
     public ItemStack getPickedResult(HitResult target) {
-        return new ItemStack(BRItems.COWFISH_SPAWN_EGG.get());
+        return new ItemStack(BRItems.SEACOW_SPAWN_EGG.get());
     }
 
     @Override
@@ -61,31 +52,14 @@ public class CowfishEntity extends Animal implements IAnimatable, IAnimationTick
         return stack.is(Items.GRASS);
     }
 
-    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        return PlayState.CONTINUE;
-    }
-
-    @Override
-    public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController<>(this, "controller", 10, this::predicate));
-    }
-
-    @Override
-    public AnimationFactory getFactory() {
-        return factory;
-    }
-
-    @Override
-    public int tickTimer() {
-        return tickCount;
-    }
-
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob parent) {
-        CowfishEntity cowfish = new CowfishEntity(BREntities.COWFISH.get(), level);
-        cowfish.setVariant(random.nextInt(2));
-        return cowfish;
+        Seacow seacow = new Seacow(BREntities.SEACOW.get(), level);
+
+        seacow.setVariant(random.nextInt(2));
+
+        return seacow;
     }
 
     @Override

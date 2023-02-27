@@ -3,8 +3,8 @@
 
   "item.beastsresurfaced.meat_scraps": "Meat Scraps",
   "item.beastsresurfaced.anemone_crawler_spawn_egg": "Anemone Crawler Spawn Egg",
-  "item.beastsresurfaced.cowfish_spawn_egg": "Cowfish Spawn Egg",
+  "item.beastsresurfaced.seacow_spawn_egg": "Seacow Spawn Egg",
 
   "entity.beastsresurfaced.anemone_crawler": "Anemone Crawler",
-  "entity.beastsresurfaced.cowfish": "Cowfish"
+  "entity.beastsresurfaced.seacow": "Seacow"
 }
